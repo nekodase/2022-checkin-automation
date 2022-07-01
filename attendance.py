@@ -3,9 +3,22 @@ from mfrc522 import MFRC522
 import time
 from datetime import datetime
 
+
 class AnachronismException(Exception):
     def __init__(self):
         super().__init__("Detected anachronism in log")
+
+
+def sanity_check(PATH):
+    log = []
+    with open(PATH, 'r', newline='', encoding='UTF8') as file:
+        reader = csv.reader(file)
+        log = list(reader)[:][0]
+    if sorted(log) == log:
+        return True
+    else:
+        return False
+
 
 def check_sequence(reader, inv):
     PATH = 'log.csv'

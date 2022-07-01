@@ -1,4 +1,4 @@
-from inventory import Inventory, sanity_check
+from inventory import Inventory
 from attendance import check_sequence
 from register import register_sequence
 from mfrc522 import MFRC522

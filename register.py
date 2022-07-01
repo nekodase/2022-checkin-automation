@@ -1,9 +1,11 @@
 import RPi.GPIO as GPIO
 import time
 
+
 class InventoryException(Exception):
     def __init__(self):
         super().__init__("Inventory size mismatch")
+
 
 def register_sequence(reader, inv):
     CHECK_TERM = 10

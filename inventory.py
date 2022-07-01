@@ -109,14 +109,3 @@ class Inventory:
                 log.write(f'{datetime.now().strftime("%m-$s %H:%M:%S")} SANITY FAIL ILF')
                 log.close()
                 return False
-
-
-def sanity_check(PATH):
-    log = []
-    with open(PATH, 'r', newline='', encoding='UTF8') as file:
-        reader = csv.reader(file)
-        log = list(reader)[:][0]
-    if sorted(log) == log:
-        return True
-    else:
-        return False
