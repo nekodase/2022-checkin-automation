@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 from mfrc522 import MFRC522
-import time
+import time, csv
 from datetime import datetime
 
 
